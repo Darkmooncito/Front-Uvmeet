@@ -19,3 +19,16 @@ export async function loginRequest(payload: LoginPayload): Promise<boolean> {
 
   return response.ok;
 }
+ export async function resetPasswordRequest(data: { password: string; token: string }): Promise<boolean> {
+  try {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/reset-password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
