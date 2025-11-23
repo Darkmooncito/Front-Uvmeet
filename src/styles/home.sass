@@ -1,0 +1,127 @@
+$red: #ff4d4d
+$white: #ffffff
+$gray: #333
+$light-bg: #f5eaea
+
+/* GENERAL */
+.home-container
+  background: $light-bg
+  min-height: 100vh
+  padding: 1rem
+  font-family: Arial, sans-serif
+
+/* NAVBAR */
+.home-navbar
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 0 2rem
+
+.home-logo img
+  width: 150px
+
+.home-nav-links
+  list-style: none
+  display: flex
+  gap: 2rem
+
+  li a
+    color: $gray
+    font-size: 1rem
+    text-decoration: none
+
+/* LEFT RED BUTTON */
+.home-left-button
+  position: absolute
+  left: 2rem
+  top: 8rem
+
+  button
+    background: $red
+    color: $white
+    border: none
+    padding: .7rem 1.5rem
+    border-radius: 8px
+    font-weight: bold
+    cursor: pointer
+
+/* HERO */
+.home-hero
+  text-align: center
+  margin-top: 3rem
+
+  h1
+    font-size: 2.5rem
+    color: $gray
+
+.hero-subtitle
+  margin-top: .5rem
+  font-size: 1.1rem
+  color: $gray
+
+.hero-question
+  margin-top: 2rem
+  font-size: 1.2rem
+  color: $gray
+
+.home-actions
+  margin-top: 1.5rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 1.2rem
+
+.btn-red
+  background: $red
+  color: $white
+  border: none
+  padding: .7rem 1.5rem
+  border-radius: 8px
+  font-weight: bold
+  cursor: pointer
+
+.link-join
+  display: flex
+  gap: .6rem
+
+  input
+    padding: .6rem
+    border-radius: 6px
+    border: 1px solid #ccc
+    width: 250px
+
+/* FOOTER */
+.home-footer
+  margin-top: 4rem
+  padding-top: 2rem
+  border-top: 2px solid #ccc
+  display: flex
+  justify-content: space-evenly
+  text-align: left
+
+.footer-column
+  h4
+    font-size: 1rem
+    color: $gray
+    margin-bottom: .7rem
+
+  a
+    color: $gray
+    text-decoration: none
+
+/* RESPONSIVE */
+@media (max-width: 900px)
+  .home-footer
+    flex-direction: column
+    gap: 2rem
+    padding-left: 2rem
+
+  .home-left-button
+    display: none
+
+  .home-nav-links
+    gap: 1rem
+    font-size: .9rem
+
+  .home-hero h1
+    font-size: 1.8rem
