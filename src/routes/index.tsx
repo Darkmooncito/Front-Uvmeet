@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../pages/login";
 import RessetPasword from "../pages/ressetpasword";
 import Forgot from "../pages/forgot";
+import Register from "../pages/register";
+
 
 
 export default function AppRoutes() {
@@ -12,6 +14,7 @@ export default function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/ressetpasword" element={<RessetPasword />} />
         <Route path="/forgot" element={<Forgot />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
