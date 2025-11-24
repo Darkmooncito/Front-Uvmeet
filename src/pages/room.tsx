@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/room.sass";
 import { Camera, CameraOut, MutedIcon, Share, Sharex, SpeakerIcon, Hand } from "../icons";
 
@@ -13,7 +13,6 @@ export default function Room() {
 
   const [muted, setMuted] = useState(false);
   const [camera, setCamera] = useState(true);
-  const [share, setShare] = useState(false);
   const [hand, setHand] = useState(true);
 
   return (
@@ -47,7 +46,7 @@ export default function Room() {
 
           <button
             className="room__btn"
-            onClick={() => setShare(!Share)}
+        
             aria-label="Toggle share"
           >
             {Share ? <Share/> : <Sharex/>}
