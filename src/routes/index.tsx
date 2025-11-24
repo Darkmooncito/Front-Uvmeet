@@ -5,6 +5,7 @@ import Forgot from "../pages/forgot";
 import Room from "../pages/room";
 import Register from "../pages/register";
 import Home from "../pages/home";
+import About from "../pages/about";
 
 
 
@@ -19,6 +20,7 @@ export default function AppRoutes() {
         <Route path="/room" element={<Room />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   );
