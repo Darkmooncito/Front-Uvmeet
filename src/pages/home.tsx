@@ -1,12 +1,30 @@
 import "../styles/home.sass";
+import Menu from "../components/menu";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <div className="home-container">
       {/* HEADER */}
       <header className="home-header">
         <div className="header-left">
-          <button className="hamburger-btn">☰</button>
+
+          {/* BOTÓN HAMBURGUESA */}
+          <button
+            className="btn-menu"
+            onClick={(e) => {
+              e.stopPropagation();
+              setOpenMenu((prev) => !prev);
+            }}
+          >
+            ☰
+          </button>
+
+          <Menu open={openMenu} setOpen={setOpenMenu} />
 
           <img
             src="/images/uvmeet-removebg-preview.png"
@@ -18,16 +36,15 @@ const Home = () => {
         <nav className="navbar">
           <a href="/about">sobre nosotros</a>
           <a href="/sitemap">mapa del sitio</a>
-          <a href="#">menu</a>
         </nav>
       </header>
 
-      {/* BOTÓN LATERAL IZQUIERDO */}
+      {/* BOTÓN LATERAL */}
       <div className="sidebar-btn">
         REUNIONES
       </div>
 
-      {/* MAIN CONTENT */}
+      {/* MAIN */}
       <main className="home-main">
         <h1 className="main-title">
           Videoconferencias <br />
@@ -39,34 +56,36 @@ const Home = () => {
         </p>
 
         <div className="action-section">
-          <p className="question">¿Que deseas hacer?</p>
+          <p className="question">¿Qué deseas hacer?</p>
 
           <div className="actions">
-            <button className="create-btn">crear reunion</button>
+            <button className="create-btn">crear reunión</button>
 
             <input
               type="text"
-              placeholder="ingrese el link de la reunion"
+              placeholder="ingrese el link de la reunión"
               className="room-input"
             />
 
-            <button className="join-btn">unirme</button>
+            <button
+              className="join-btn"
+              onClick={() => navigate("/room")}
+            >
+              unirme
+            </button>
           </div>
         </div>
       </main>
 
       {/* FOOTER */}
       <footer className="home-footer">
-
-        <div className="footer-divider"></div>   
-
+        <div className="footer-divider"></div>
         <h3>Mapa del sitio</h3>
 
         <div className="footer-columns">
-
           <div>
             <p><strong>ACCESO</strong></p>
-            <p>Iniciar Sesion</p>
+            <p>Iniciar Sesión</p>
             <p>Crear cuenta</p>
             <p>Recuperar contraseña</p>
           </div>
@@ -79,7 +98,7 @@ const Home = () => {
           </div>
 
           <div>
-            <p><strong>NAVEGACION</strong></p>
+            <p><strong>NAVEGACIÓN</strong></p>
             <p>Inicio</p>
             <p>Sobre nosotros</p>
             <p>Reuniones</p>
@@ -89,7 +108,6 @@ const Home = () => {
             <p><strong>CONTACTO</strong></p>
             <p>uvmeet@gmail.com</p>
           </div>
-
         </div>
       </footer>
     </div>

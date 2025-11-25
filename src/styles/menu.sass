@@ -1,0 +1,39 @@
+$red: #ff4d4d
+$red-dark: #cc3b3b
+
+.menu-container
+  position: absolute
+  top: 70px
+  right: 20px
+  width: 180px
+  background: $red
+  border-radius: 12px
+  padding: 15px
+  display: none
+  flex-direction: column
+  gap: 10px
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25)
+  z-index: 99999
+
+  p
+    margin: 0
+    cursor: pointer
+    padding: 10px
+    border-radius: 8px
+    color: white
+    font-size: 1rem
+
+    &:hover
+      background: $red-dark
+
+.menu-container.open
+  display: flex
+
+.btn-menu
+  position: relative
+  z-index: 100000
+  background: transparent
+  border: none
+  color: white
+  font-size: 2rem
+  cursor: pointer
