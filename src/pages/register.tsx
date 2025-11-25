@@ -1,5 +1,6 @@
 import { useState, type JSX } from "react";
 import "../styles/register.sass";
+import { useAuth } from "../components/AuthProvider";
 
 /**
  * Register page component.
@@ -13,17 +14,19 @@ export default function Register(): JSX.Element {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const { register } = useAuth();
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-
-    if (password !== confirmPassword) {
-      alert("Las contraseñas no coinciden.");
-      return;
-    }
-
-    alert("Registro enviado (solo frontend)");
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  if (password !== confirmPassword) { alert("Passwords must match"); return; }
+  try {
+    await register({ firstName, lastName, age: 18, email, password });
+    alert("Account created (mock). Please login.");
+    window.location.href = "/login";
+  } catch (err:any) {
+    alert(err.message || "Register failed");
   }
+}
 
   return (
     <div className="register-container">
