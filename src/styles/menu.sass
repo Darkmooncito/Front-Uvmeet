@@ -37,3 +37,47 @@ $red-dark: #cc3b3b
   color: white
   font-size: 2rem
   cursor: pointer
+
+.logout-confirm
+  display: flex
+  flex-direction: column
+  gap: 1.5rem
+  padding: 1rem
+  text-align: center
+
+.logout-title
+  font-weight: bold
+  font-size: 1.1rem
+  color: white
+
+.logout-buttons
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 2rem
+  margin-top: 1rem
+
+
+.btn-accept, .btn-cancel
+  flex: 1
+  padding: 0.6rem 0
+  border: none
+  border-radius: 8px
+  cursor: pointer
+  font-size: .95rem
+  font-weight: 600
+  transition: 0.2s ease
+
+.btn-accept
+  background: white
+  color: #cc3b3b
+  &:hover
+    background: #ffe5e5
+
+.btn-cancel
+  background: #ffffff22
+  color: white
+  border: 1px solid #ffffff55
+  &:hover
+    background: #ffffff44
+
